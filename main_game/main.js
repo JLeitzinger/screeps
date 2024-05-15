@@ -1,6 +1,14 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
-const base_name = 'Optimus'
+var autoSpawn = require('action.autospawn');
+
+const base_name = 'Optimus';
+var totalCreeps = new Map();
+
+// Define # of Creeps total
+totalCreeps.set('harvester', 2)
+totalCreeps.set('upgrader', 1)
+
 
 module.exports.loop = function () {
 
@@ -12,25 +20,26 @@ module.exports.loop = function () {
     }
 
     //Autospawn
-    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    autoSpawn.run(totalCreeps, base_name);
+    // var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+    // var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     
-    console.log('Harvesters: ' + harvesters.length);
-    console.log('Upgraders: '+ upgraders.length);
+    // console.log('Harvesters: ' + harvesters.length);
+    // console.log('Upgraders: '+ upgraders.length);
 
-    if(harvesters.length < 2) {
-        var newName = 'Harvester' + Game.time;
-        console.log('Spawning new harvester: ' + newName)
-        Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
-            {memory: {role: 'harvester'}});
-    }
+    // if(harvesters.length < 2) {
+    //     var newName = 'Harvester' + Game.time;
+    //     console.log('Spawning new harvester: ' + newName)
+    //     Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
+    //         {memory: {role: 'harvester'}});
+    // }
 
-    if(upgraders.length < 1) {
-        var newName = 'Upgrader' + Game.time;
-        console.log('Spawning new upgrader: ' + newName)
-        Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
-            {memory: {role: 'upgrader'}});
-    }
+    // if(upgraders.length < 1) {
+    //     var newName = 'Upgrader' + Game.time;
+    //     console.log('Spawning new upgrader: ' + newName)
+    //     Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
+    //         {memory: {role: 'upgrader'}});
+    // }
 
     //Notification
     if(Game.spawns[base_name].spawning) {
