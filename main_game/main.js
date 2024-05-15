@@ -11,15 +11,25 @@ module.exports.loop = function () {
         }
     }
 
-    //Check total harvesters
+    //Autospawn
     var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+    var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+    
     console.log('Harvesters: ' + harvesters.length);
+    console.log('Upgraders: '+ upgraders.length);
 
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName)
         Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
             {memory: {role: 'harvester'}});
+    }
+
+    if(upgraders.length < 1) {
+        var newName = 'Upgrader' + Game.time;
+        console.log('Spawning new upgrader: ' + newName)
+        Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
+            {memory: {role: 'upgrader'}});
     }
 
     //Notification
