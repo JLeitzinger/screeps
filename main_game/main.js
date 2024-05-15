@@ -1,5 +1,6 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
+const base_name = 'Optimus'
 
 module.exports.loop = function () {
 
@@ -17,17 +18,17 @@ module.exports.loop = function () {
     if(harvesters.length < 2) {
         var newName = 'Harvester' + Game.time;
         console.log('Spawning new harvester: ' + newName)
-        Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, 
+        Game.spawns['base_name'].spawnCreep([WORK, CARRY, MOVE], newName, 
             {memory: {role: 'harvester'}});
     }
 
     //Notification
-    if(Game.spawns['Spawn1'].spawning) {
-        var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
-        Game.spawns['Spawn1'].room.visual.text(
+    if(Game.spawns[base_name].spawning) {
+        var spawningCreep = Game.creeps[Game.spawns[base_name].spawning.name];
+        Game.spawns[base_name].room.visual.text(
             '🛠️' + spawningCreep.memory.role,
-            Game.spawns['Spawn1'].pos.x + 1,
-            Game.spawns['Spawn1'].pos.x,
+            Game.spawns[base_name].pos.x + 1,
+            Game.spawns[base_name].pos.x,
             {align: 'left', opacity: 0.8});
     }
 
