@@ -8,8 +8,8 @@ var autoSpawn = {
                 (creep) => creep.memory.role == role
             );
             console.log(role + ': ' + num_of_creeps.length);
-            console.log(role + ' ' + value)
-            if (num_of_creeps < value) {
+            console.log(role + ' ' + value);
+            if (num_of_creeps.length < value) {
                 var newName = role + Game.time;
                 console.log('Spawning new ' + role + ': ' + newName);
                 Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName,
