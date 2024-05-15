@@ -4,6 +4,14 @@ var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
 
+    var tower = Game.getObjectById('86f6ec292e2f8c102b4a4cb4');
+    if(tower) {
+        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if(closestHostile) {
+            tower.attack(closestHostile);
+        }
+    }
+
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
