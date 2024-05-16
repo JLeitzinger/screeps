@@ -35,7 +35,7 @@ var checkSources = {
                     }
                 }
             }
-
+            console.log(source_id + ' has ' + freeSpaces + ' available.');
             spotsInLine.set(source_id, freeSpaces);
 
         }
