@@ -24,7 +24,7 @@ module.exports.loop = function () {
     }
 
     //Autospawn
-    // autoSpawn.run(totalCreeps, base_name);
+    autoSpawn.run(totalCreeps, base_name);
 
     //Notification
     if(Game.spawns[base_name].spawning) {
@@ -36,7 +36,7 @@ module.exports.loop = function () {
             {align: 'left', opacity: 0.8});
     }
 
-    checkSources.run();
+    // checkSources.run();
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
