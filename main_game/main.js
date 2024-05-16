@@ -24,7 +24,7 @@ module.exports.loop = function () {
     }
 
     //Autospawn
-    autoSpawn.run(totalCreeps, base_name);
+    // autoSpawn.run(totalCreeps, base_name);
 
     //Notification
     if(Game.spawns[base_name].spawning) {
