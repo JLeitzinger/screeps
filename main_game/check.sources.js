@@ -41,7 +41,7 @@ var checkSources = {
         }
 
         console.log('from checkSources:')
-        for (var key of spotsInLine) {
+        for (var [key, value] of spotsInLine) {
             console.log(key+': '+spotsInLine[key]);
         }
 
