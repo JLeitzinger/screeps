@@ -40,7 +40,8 @@ var checkSources = {
 
         }
 
-        console.log('from checkSources:')
+        console.log('from checkSources:');
+        console.log(spotsInLine);
         for (var [key, value] of spotsInLine) {
             console.log(key+': '+spotsInLine.get(key));
         }
