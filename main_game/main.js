@@ -1,9 +1,13 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var autoSpawn = require('action.autospawn');
+var checkSources = require('check.sources');
+
 
 const base_name = 'Optimus';
 var totalCreeps = new Map();
+var spotsInLine = new Map();
+
 
 // Define # of Creeps total
 totalCreeps.set('harvester', 2)
@@ -21,25 +25,6 @@ module.exports.loop = function () {
 
     //Autospawn
     autoSpawn.run(totalCreeps, base_name);
-    // var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-    // var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    
-    // console.log('Harvesters: ' + harvesters.length);
-    // console.log('Upgraders: '+ upgraders.length);
-
-    // if(harvesters.length < 2) {
-    //     var newName = 'Harvester' + Game.time;
-    //     console.log('Spawning new harvester: ' + newName)
-    //     Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
-    //         {memory: {role: 'harvester'}});
-    // }
-
-    // if(upgraders.length < 1) {
-    //     var newName = 'Upgrader' + Game.time;
-    //     console.log('Spawning new upgrader: ' + newName)
-    //     Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName, 
-    //         {memory: {role: 'upgrader'}});
-    // }
 
     //Notification
     if(Game.spawns[base_name].spawning) {
@@ -51,6 +36,7 @@ module.exports.loop = function () {
             {align: 'left', opacity: 0.8});
     }
 
+    checkSources.run();
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
