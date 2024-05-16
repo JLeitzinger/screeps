@@ -5,7 +5,7 @@ var roleHarvester = {
 	    if(creep.store.getFreeCapacity() > 0) {
             // var sources = creep.room.find(FIND_SOURCES);
             console.log('Free Cap:' + creep.store.getFreeCapacity());
-            var source = creep.memory.resource;
+            var source = Game.getObjectById(creep.memory.resource);
             console.log('Creep assigned to ' + source);
             if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
