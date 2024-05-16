@@ -36,7 +36,7 @@ var checkSources = {
                 }
             }
 
-            globalThis.spotsInLine.set(source_id, freeSpaces);
+            spotsInLine.set(source_id, freeSpaces);
 
         }
     } 
