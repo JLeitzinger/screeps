@@ -3,12 +3,12 @@ var assignSource = {
         if a source has remaining spots, assign creep to it
         decrement number of spots
     */
-    run: function(creep) {
+    run: function(creep, spotsInLine) {
         var sources = creep.room.find(FIND_SOURCES);
         for (var source in sources) {
             if(spotsInLine[source.id] > 0) {
                 creep.memory.resource = source.id;
-                spotsInLine[source.id]--
+                spotsInLine[source.id]--;
             }
         }
     }

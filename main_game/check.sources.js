@@ -37,10 +37,10 @@ var checkSources = {
                 }
             }
 
-            //spotsInLine.set(source_id, freeSpaces);
+            spotsInLine.set(source_id, freeSpaces);
 
         }
-    return spotsInLine
+        return spotsInLine
     } 
 }
 

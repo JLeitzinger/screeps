@@ -42,7 +42,7 @@ module.exports.loop = function () {
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         spotsInLine = checkSources.run(creep, spotsInLine);
-        assignSource.run(creep);
+        assignSource.run(creep, spotsInLine);
         if(creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
