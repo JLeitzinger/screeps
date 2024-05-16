@@ -10,10 +10,10 @@ Game.getObjectById('5bbcae8c9099fc012e639397').pos.y
 */
 
 var checkSources = {
-    /* @param {sources} sources*/
-    run: function() {
+    /* @param {creep} creep*/
+    run: function(creep) {
         //Get list of sources
-        var sources = Game.creeps[0].room.find(FIND_SOURCES)
+        var sources = creep.room.find(FIND_SOURCES)
         for (var source in sources) {
             var freeSpaces = 0;
 

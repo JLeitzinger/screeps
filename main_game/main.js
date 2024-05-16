@@ -2,12 +2,12 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var autoSpawn = require('action.autospawn');
 var checkSources = require('check.sources');
-
+var assignSource = require('action.assignSource');
 
 const base_name = 'Optimus';
 var totalCreeps = new Map();
 var spotsInLine = new Map();
-
+var resourceAssignments = new Map();
 
 // Define # of Creeps total
 totalCreeps.set('harvester', 2)
@@ -37,9 +37,12 @@ module.exports.loop = function () {
     }
 
     // checkSources.run();
+    var number_creep = 0;
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
+        checkSources.run(creep);
+        assignSource.run(creep);
         if(creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
