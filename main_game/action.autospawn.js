@@ -1,13 +1,13 @@
+
+let buildHash = new Map();
+
+buildHash.set('harvester', [WORK, CARRY, MOVE]);
+buildHash.set('upgrader', [WORK, CARRY, MOVE]);
+buildHash.set('builder', [WORK, CARRY, MOVE]);
+
+
 var autoSpawn = {
     /* @param {totalCreeps}  */
-
-    var buildHash = {
-        'harvester': ]WORK, CARRY, MOVE],
-        'upgrader' : [WORK, CARRY, MOVE],
-        'builder' : [WORK, CARRY, MOVE]
-    }
-
-
     run: function(totalCreeps, base_name) {
         for(const [role, value] of totalCreeps) {
             var num_of_creeps = _.filter(
