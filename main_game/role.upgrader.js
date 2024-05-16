@@ -20,7 +20,7 @@ var roleUpgrader = {
                 var controller_x = creep.room.controller.pos.x;
                 var controller_y = creep.room.controller.pos.y;
 
-                creep.moveTo(controller_x, controller_y - 1);
+                creep.moveTo(controller_x - 1, controller_y);
             }
         }
         else {
