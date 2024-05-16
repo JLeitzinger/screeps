@@ -1,6 +1,13 @@
 var autoSpawn = {
     /* @param {totalCreeps}  */
 
+    var buildHash = {
+        'harvester': ]WORK, CARRY, MOVE],
+        'upgrader' : [WORK, CARRY, MOVE],
+        'builder' : [WORK, CARRY, MOVE]
+    }
+
+
     run: function(totalCreeps, base_name) {
         for(const [role, value] of totalCreeps) {
             var num_of_creeps = _.filter(
@@ -12,7 +19,7 @@ var autoSpawn = {
             if (num_of_creeps.length < value) {
                 var newName = role + Game.time;
                 console.log('Spawning new ' + role + ': ' + newName);
-                Game.spawns[base_name].spawnCreep([WORK, CARRY, MOVE], newName,
+                Game.spawns[base_name].spawnCreep(buildHash.get(role), newName,
                     {memory: {role: role}}
                 );
             }
