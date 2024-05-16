@@ -41,4 +41,4 @@ var checkSources = {
     } 
 }
 
-module.exports = checkSources;harvest
+module.exports = checkSources
