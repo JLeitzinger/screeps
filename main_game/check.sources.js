@@ -30,7 +30,7 @@ var checkSources = {
 
             for (var temp_x = start_x; temp_x <= start_x + 3; ++temp_x) {
                 for (var temp_y = start_y; temp_y <= start_y + 3; ++temp_y) {
-                    if(terrain.get(temp_x, temp_y)==2) {
+                    if(terrain.get(temp_x, temp_y)!=1) {
                         freeSpaces++;
                     }
                 }
