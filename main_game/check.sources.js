@@ -35,17 +35,9 @@ var checkSources = {
                     }
                 }
             }
-            console.log(source_id + ' has ' + freeSpaces + ' available.');
             spotsInLine.set(source_id, freeSpaces);
 
         }
-
-        console.log('from checkSources:');
-        console.log(spotsInLine);
-        for (var key of spotsInLine.keys()) {
-            console.log(key+': '+spotsInLine.get(key));
-        }
-
         return spotsInLine
     } 
 }
