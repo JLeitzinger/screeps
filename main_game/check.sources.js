@@ -8,6 +8,7 @@ go to a different resource
 Game.getObjectById('5bbcae8c9099fc012e639397').pos.x
 Game.getObjectById('5bbcae8c9099fc012e639397').pos.y
 */
+var spotsInLine = new Map();
 
 var checkSources = {
     /* @param {creep} creep*/
@@ -39,6 +40,7 @@ var checkSources = {
             spotsInLine.set(source_id, freeSpaces);
 
         }
+    return spotsInLine
     } 
 }
 
