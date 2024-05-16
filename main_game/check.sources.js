@@ -39,6 +39,12 @@ var checkSources = {
             spotsInLine.set(source_id, freeSpaces);
 
         }
+
+        console.log('from checkSources:')
+        for (var key of spotsInLine) {
+            console.log(key+': '+spotsInLine[key]);
+        }
+
         return spotsInLine
     } 
 }
