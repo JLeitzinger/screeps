@@ -8,11 +8,11 @@ go to a different resource
 Game.getObjectById('5bbcae8c9099fc012e639397').pos.x
 Game.getObjectById('5bbcae8c9099fc012e639397').pos.y
 */
-var spotsInLine = new Map();
+
 
 var checkSources = {
     /* @param {creep} creep*/
-    run: function(creep) {
+    run: function(creep, spotsInLine) {
         //Get list of sources
         var sources = creep.room.find(FIND_SOURCES);
         for (const source of sources) {
