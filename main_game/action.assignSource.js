@@ -8,6 +8,7 @@ var assignSource = {
         for (var source in sources) {
             if(spotsInLine[source.id] > 0) {
                 creep.memory.resource = source.id;
+                console.log(creep.id + ' assigned to ' + creep.memory.resource);
                 spotsInLine[source.id]--;
             }
         }

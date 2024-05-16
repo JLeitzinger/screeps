@@ -16,7 +16,6 @@ var checkSources = {
         //Get list of sources
         var sources = creep.room.find(FIND_SOURCES);
         for (const source of sources) {
-            console.log(source)
             var freeSpaces = 0;
 
             var source_id = source.id
