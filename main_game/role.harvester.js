@@ -12,7 +12,7 @@ var roleHarvester = {
             }
         }
         else {
-            console.log(creep.name + ' going back to spawn');
+            // console.log(creep.name + ' going back to spawn');
             var targets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) &&
