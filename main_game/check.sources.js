@@ -13,7 +13,7 @@ var checkSources = {
     /* @param {sources} sources*/
     run: function() {
         //Get list of sources
-        var sources = Game.spawns['Optimus'].room.find(FIND_SOURCES)
+        var sources = Game.creeps[0].room.find(FIND_SOURCES)
         for (var source in sources) {
             var freeSpaces = 0;
 
