@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var buildRoads = require('action.buildRoads');
 
 var autoSpawn = require('action.autospawn');
 var checkSources = require('check.sources');
