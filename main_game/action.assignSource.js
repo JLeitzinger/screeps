@@ -15,3 +15,23 @@ var assignSource = {
 }
 
 module.exports = assignSource;
+
+
+
+/* 
+Idea: 
+use creeps' memory:
+assigned resource
+rank
+status
+
+
+check available sport at a resource
+check list of creeps assigned to that resource and status == harvesting
+if # harvesting < available spots
+then decr all creeps assigned to that resuorce && capacityAvailable > 0 by one
+and have the creep w/ 0 rank go to harvest
+
+
+
+*/
