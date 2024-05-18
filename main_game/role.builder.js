@@ -7,7 +7,9 @@ var roleBuilder = {
             creep.memory.building = false;
             creep.say('🔄 harvest');
 	    }
-	    if(!creep.memory.building && creep.store.getFreeCapacity() == 0) {
+	    if(!creep.memory.building && 
+			creep.store.getFreeCapacity() == 0 &&
+			Game.spawns['Optimus'].store[RESOURCE_ENERGY]>150) {
 	        creep.memory.building = true;
 	        creep.say('🚧 build');
 	    }
