@@ -9,7 +9,7 @@ var roleUpgrader = {
 	    }
 	    if(!creep.memory.upgrading &&
             creep.store.getFreeCapacity() == 0 &&
-            creep.room.controller.ticksToDowngrade < 10000) {
+            Game.spawns['Optimus'].store.getFreeCapacity>100) {
 	        creep.memory.upgrading = true;
 	        creep.say('⚡ upgrade');
 	    }
@@ -25,7 +25,7 @@ var roleUpgrader = {
                 creep.moveTo(controller_x - 1, controller_y);
             }
         }
-        if(creep.store[RESOURCE_ENERGY] == 0) {
+        if(creep.store.getFreeCapacity() > 0) {
             var sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
