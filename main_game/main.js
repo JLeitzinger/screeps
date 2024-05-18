@@ -12,9 +12,9 @@ var spotsInLine = new Map();
 var resourceAssignments = new Map();
 
 // Define # of Creeps total
-totalCreeps.set('harvester', 2);
+totalCreeps.set('harvester', 4);
 totalCreeps.set('upgrader', 2);
-totalCreeps.set('builder', 1);
+totalCreeps.set('builder', 0);
 
 
 module.exports.loop = function () {
