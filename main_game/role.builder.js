@@ -9,7 +9,7 @@ var roleBuilder = {
 	    }
 	    if(!creep.memory.building && 
 			creep.store.getFreeCapacity() == 0 &&
-			Game.spawns['Optimus'].store[RESOURCE_ENERGY]>150) {
+			Game.spawns['spawn1'].store[RESOURCE_ENERGY]>150) {
 	        creep.memory.building = true;
 	        creep.say('🚧 build');
 	    }
