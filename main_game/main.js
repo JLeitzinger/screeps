@@ -1,11 +1,11 @@
-var roleHarvester = require('role.harvester');
-var roleUpgrader = require('role.upgrader');
-var roleBuilder = require('role.builder');
-var buildRoads = require('action.buildRoads');
+var roleHarvester = require('./roles/role.harvester');
+var roleUpgrader = require('./roles/role.upgrader');
+var roleBuilder = require('./roles/role.builder');
+var buildRoads = require('./actions/action.buildRoads');
 
-var autoSpawn = require('action.autospawn');
-var checkSources = require('check.sources');
-var assignSource = require('action.assignSource');
+var autoSpawn = require('./actions/action.autospawn');
+var checkSources = require('./checks/check.sources');
+var assignSource = require('./actions/action.assignSource');
 
 const base_name = 'spawn1';
 var totalCreeps = new Map();
@@ -13,7 +13,7 @@ var spotsInLine = new Map();
 var resourceAssignments = new Map();
 
 // Define # of Creeps total
-totalCreeps.set('harvester', 1);
+totalCreeps.set('harvester', 2);
 totalCreeps.set('upgrader', 1);
 totalCreeps.set('builder', 0);
 
