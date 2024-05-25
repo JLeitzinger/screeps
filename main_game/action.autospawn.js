@@ -5,7 +5,7 @@ buildHash.set('builder', [WORK, CARRY, MOVE]);
 buildHash.set('upgrader', [WORK, WORK, CARRY, MOVE]);
 buildHash.set('harvester', [WORK, CARRY, MOVE]);
 
-function fillCreeps(totalCreeps) {
+function fillCreeps(totalCreeps, spawn) {
     for(const [role, value] of totalCreeps) {
         var num_of_creeps = _.filter(
             Game.creeps,
@@ -16,7 +16,7 @@ function fillCreeps(totalCreeps) {
         if (num_of_creeps.length < value) {
             var newName = role + Game.time;
             console.log('Spawning new ' + role + ': ' + newName);
-            Game.spawns[base_name].spawnCreep(buildHash.get(role), newName,
+            Game.spawns[spawn].spawnCreep(buildHash.get(role), newName,
                 {memory: {role: role}}
             );
         }
@@ -28,7 +28,7 @@ var autoSpawn = {
     run: function(totalCreeps, base_name) {
         for (const spawn in Game.spawns) {
             if(!Game.spawns[spawn].spawning) {
-                fillCreeps(totalCreeps);
+                fillCreeps(totalCreeps, spawn);
             }
         }
         
