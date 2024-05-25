@@ -15,7 +15,7 @@ var resourceAssignments = new Map();
 // Define # of Creeps total
 totalCreeps.set('harvester', 3);
 totalCreeps.set('upgrader', 1);
-totalCreeps.set('builder', 1);
+totalCreeps.set('builder', 0);
 
 
 module.exports.loop = function () {
