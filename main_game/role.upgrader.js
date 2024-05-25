@@ -9,7 +9,7 @@ var roleUpgrader = {
 	    }
 	    if(!creep.memory.upgrading &&
             creep.store.getFreeCapacity() == 0 &&
-            Game.spawns['Optimus'].store.getFreeCapacity(RESOURCE_ENERGY)<100) {
+            Game.spawns['spawn1'].store.getFreeCapacity(RESOURCE_ENERGY)<100) {
 	        creep.memory.upgrading = true;
 	        creep.say('⚡ upgrade');
 	    }
