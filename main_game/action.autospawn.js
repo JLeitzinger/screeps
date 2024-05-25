@@ -1,9 +1,11 @@
 
 let buildHash = new Map();
 
-buildHash.set('harvester', [WORK, CARRY, MOVE]);
-buildHash.set('upgrader', [WORK, WORK, CARRY, MOVE]);
 buildHash.set('builder', [WORK, CARRY, MOVE]);
+buildHash.set('upgrader', [WORK, WORK, CARRY, MOVE]);
+buildHash.set('harvester', [WORK, CARRY, MOVE]);
+
+
 
 
 var autoSpawn = {
