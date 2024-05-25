@@ -7,7 +7,7 @@ var autoSpawn = require('action.autospawn');
 var checkSources = require('check.sources');
 var assignSource = require('action.assignSource');
 
-const base_name = 'Optimus';
+const base_name = 'spawn1';
 var totalCreeps = new Map();
 var spotsInLine = new Map();
 var resourceAssignments = new Map();
