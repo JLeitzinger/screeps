@@ -48,7 +48,7 @@ var roleUpgrader = {
             //     }
             // }
 
-            funcCreeps.findStores(creep);
+            funcCreeps.depositStores(creep);
         }
 	}
 };

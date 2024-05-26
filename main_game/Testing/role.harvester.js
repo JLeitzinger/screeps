@@ -9,7 +9,7 @@ var roleHarvester = {
             }
         else {
 
-            funcCreeps.findStores(creep);
+            funcCreeps.depositStores(creep);
         }
 	}
 };
