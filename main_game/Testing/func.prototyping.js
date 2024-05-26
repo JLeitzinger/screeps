@@ -16,12 +16,19 @@ var funcCreeps = require("func.creeps");
 
 // <Creeps>
 var funcPrototyping = {
-    creeps: function() {
-        Creep.prototype.run = function() {
-            var role = this.memory.role;
-            roles[role].run(this)
-        }
+
+    // < creeps
+    creeps: function(){
+      // < run
+      Creep.prototype.run = function(){
+        var role = this.memory.role;
+  
+        roles[role].run(this);
+      }  
     }
-}
+    // >
+  
+  };
+
 
 module.export = funcPrototyping;
