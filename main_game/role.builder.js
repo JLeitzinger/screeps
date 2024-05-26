@@ -22,9 +22,7 @@ var roleBuilder = {
                 }
             }
 	    }
-	    if (Game.spawns['spawn1'].store[RESOURCE_ENERGY]>150 &&
-			!creep.memory.building
-		) {
+	    else {
 			var targets = creep.room.find(FIND_STRUCTURES, {
 				filter: (structure) => {
 					return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN) &&
@@ -37,12 +35,6 @@ var roleBuilder = {
 				}
 			}
         }
-		else {
-			var target = Game.getObjectById(creep.memory.resource);
-			if(creep.harvest(target) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(target, {visualizePathStyle: {stroke: '#ffaa00'}});
-			}
-		}
 	}
 };
 
