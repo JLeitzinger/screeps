@@ -15,10 +15,12 @@ var funcCreeps = require("func.creeps");
 
 
 // <Creeps>
-var funcPrototyping = function() {
-    Creep.prototype.run = function() {
-        var role = this.memory.role;
-        roles[role].run(this)
+var funcPrototyping = {
+    creeps: function() {
+        Creep.prototype.run = function() {
+            var role = this.memory.role;
+            roles[role].run(this)
+        }
     }
 }
 
