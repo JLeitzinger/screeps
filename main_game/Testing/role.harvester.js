@@ -14,7 +14,6 @@ var roleHarvester = {
             // if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
                 // creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
-        }
         else {
             // console.log(creep.name + ' going back to spawn');
             var targets = creep.room.find(FIND_STRUCTURES, {
