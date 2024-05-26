@@ -19,12 +19,14 @@ var funcCreeps = {
                         structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0;
             }
         });
+        
+        console.log(creep.id + "is going to" + targets[0])
         if(targets.length > 0) {
             if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
             }
         }
-    }
+    },
 };
 
 
