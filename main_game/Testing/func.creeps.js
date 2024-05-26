@@ -10,4 +10,4 @@ var funcCreeps = {
 };
 
 
-module.exports = funCreeps;
+module.exports = funcCreeps;
