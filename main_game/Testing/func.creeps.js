@@ -7,4 +7,7 @@ var funcCreeps = {
 
 
     },
-}
+};
+
+
+module.exports = funCreeps;
