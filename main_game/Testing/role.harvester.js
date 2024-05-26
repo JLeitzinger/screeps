@@ -7,10 +7,12 @@ var roleHarvester = {
 	    if(creep.store.getFreeCapacity() > 0) {
             // var sources = creep.room.find(FIND_SOURCES);
             // console.log('Free Cap:' + creep.store.getFreeCapacity());
-            var source = Game.getObjectById(creep.memory.resource);
             // console.log('Creep assigned to ' + source);
-            if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
+
+            funcCreeps.harvest(creep);
+            // var source = Game.getObjectById(creep.memory.resource);
+            // if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                // creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
         else {
