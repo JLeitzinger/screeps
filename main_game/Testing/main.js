@@ -10,7 +10,7 @@ var assignSource = require('./action.assignSource');
 
 var funcPrototyping = require("./func.prototyping");
 var funcSources = require("./func.sources");
-var roleTower = require("./role.tower.js")
+var roleTower = require("./role.tower")
 
 
 const base_name = 'spawn1';
