@@ -73,7 +73,7 @@ var funcSources = {
             filter: {structureType: STRUCTURE_EXTENSION}
         });
 
-        for(let extention of extentions) {
+        for(let extention of extensions) {
             totalEnergy += extensions.energy;
         }
 
