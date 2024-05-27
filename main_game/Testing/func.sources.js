@@ -63,6 +63,23 @@ var funcSources = {
         return closestLocation;
     },
 
+    getTotalEnergy: function() {
+        spawn = _.values(Game.spawns)[0];
+        room = spawn.room;
+
+        var totalEnergy = spawn.energy;
+
+        let extensions = room.find(FIDN_MY_STRUCTURES, {
+            filter: {structureType: STRUCTURE_EXTENSION}
+        });
+
+        for(let extention of extentions) {
+            totalEnergy += extensions.energy;
+        }
+
+        return totalEnergy
+    },
+
 }
 
 module.exports = funcSources;

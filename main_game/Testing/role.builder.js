@@ -1,10 +1,12 @@
 var funcCreeps = require('func.creeps');
-
+var funcSources = require('func.sources');
 
 var roleBuilder = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
+
+		const totalEnergy = funcSources.getTotalEnergy();
 
 	    if(creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
             creep.memory.building = false;
@@ -16,7 +18,7 @@ var roleBuilder = {
 	        creep.say('🚧 build');
 	    }
 
-	    if(creep.memory.building) {
+	    if(creep.memory.building && totalEnergy > 300) {
 	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
             if(targets.length) {
                 if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
