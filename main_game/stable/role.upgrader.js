@@ -26,15 +26,15 @@ var roleUpgrader = {
                 creep.moveTo(controller_x - 1, controller_y);
             }
         }
-        if(creep.store.getFreeCapacity() > 0 && !creep.memory.upgrading) {
+        else{
             console.log('upgrader should be harvesting')
             funcCreeps.harvest(creep);
         }
 
-        else {
-            console.log('upgrader capacity: ' + creep.store.getFreeCapacity());
-            funcCreeps.depositStores(creep);
-        }
+        // else {
+        //     console.log('upgrader capacity: ' + creep.store.getFreeCapacity());
+        //     funcCreeps.depositStores(creep);
+        // }
 	}
 };
 
