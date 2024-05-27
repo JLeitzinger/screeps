@@ -52,14 +52,14 @@ var funcSources = {
             var temp_id = sources[i].id
 
             distance = location.pos.findPathTo(sources[i]).length;
-            console.log(distance);
 
             if (closestDistance > distance) {
                 closestDistance = distance;
-                // console.log('temp_id:' + temp_id);
                 var closestLocation = temp_id;
             }
         }
+        console.log('closest location to ' + location + ':' + temp_id);
+        console.log('Distance: ' + closestDistance);
         return closestLocation;
     },
 
