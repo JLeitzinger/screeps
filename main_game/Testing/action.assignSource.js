@@ -12,7 +12,7 @@ var assignSource = {
         if(creep.memory.role == 'upgrader') {
             var cont_loc = creep.room.controller;
             location = funcSources.findClosest(cont_loc);
-            creep.memory.resource = location.id
+            creep.memory.resource = location
             return;
         }
 
@@ -20,7 +20,7 @@ var assignSource = {
             var spawn = _.values(Game.spawns)[0];
             location = funcSources.findClosest(spawn);
             console.log(creep.id + ' assigned: ' + location.id);
-            creep.memory.resource = location.id;
+            creep.memory.resource = location;
             return;
 
         }
