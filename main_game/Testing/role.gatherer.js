@@ -8,7 +8,7 @@ var roleGatherer = {
                 filter: (creep) => creep.memory.role == 'harvester'
             });
             console.log(harvesters);
-            if (harvesters > 0 {
+            if (harvesters > 0) {
                 creep.moveTo(harvesters[0])
                 console.log(creep + ' moving to ' + harvesters[0]);
             }
