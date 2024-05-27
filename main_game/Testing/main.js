@@ -20,6 +20,7 @@ var resourceAssignments = new Map();
 totalCreeps.set('harvester', 2);
 totalCreeps.set('upgrader', 2);
 totalCreeps.set('builder', 1);
+totalCreeps.set('gatherer', 1)
 
 
 // Prototyping

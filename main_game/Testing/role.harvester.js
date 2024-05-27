@@ -1,4 +1,5 @@
 var funcCreeps = require("func.creeps");
+var funcStructures = require("func.structures");
 
 var roleHarvester = {
 
@@ -8,7 +9,12 @@ var roleHarvester = {
             creep.memory.harvesting = true;
             funcCreeps.harvest(creep);
             }
-        else {
+
+        if(funcStructures.countCreeps('gatherer')) {
+            creep.drop(RESOURCE_ENERGY);
+        }
+
+        else {  
             creep.memory.harvesting = false;
             funcCreeps.depositStores(creep);
         }
