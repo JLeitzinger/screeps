@@ -7,6 +7,7 @@ var roleGatherer = {
             if (drops.length > 1) {
                 if(creep.pickup(drops[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(drops[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                    console.log(creep + ' moving to ' + drops[0])
                 }
             }
         }
