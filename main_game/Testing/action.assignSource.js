@@ -15,6 +15,7 @@ var assignSource = {
             // console.log(creep.id + ' assigned: ' + location);
 
             creep.memory.resource = location
+            console.log('upgrader ' + creep.memory.resource);
             return;
             //test
         }
