@@ -54,7 +54,7 @@ var funcSources = {
             if (closestDistance > distance) {
                 closestDistance = distance;
                 console.log(sources[i])
-                console.log(temp_id);
+                console.log('temp_id:' + temp_id);
                 var closestLocation = temp_id;
             }
         }
