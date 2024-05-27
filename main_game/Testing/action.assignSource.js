@@ -1,3 +1,6 @@
+const funcSources = require('func.sources');
+
+
 var assignSource = {
     /* @param::{creep} creep
         if a source has remaining spots, assign creep to it
@@ -5,11 +8,20 @@ var assignSource = {
     */
     run: function(creep, spotsInLine) {
         var sources = creep.room.find(FIND_SOURCES);
-        for (var source of sources) {
-            if(spotsInLine.get(source.id) > 0) {
-                creep.memory.resource = source.id;
-                spotsInLine[source.id]--;
-            }
+
+        if(creep.memory.role == 'upgrader') {
+            var cont_loc = creep.room.controller;
+            location = funcSources.findClosest(cont_loc);
+            creep.memory.resource = location.id
+            return;
+        }
+
+        else {
+            var spawn = _.values(Game.spawns)[0];
+            location = funcSources.findClosest(spawn);
+            creep.memory.resource = location.id;
+            return;
+
         }
     }
 }
