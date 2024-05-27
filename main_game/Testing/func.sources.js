@@ -58,8 +58,8 @@ var funcSources = {
                 var closestLocation = temp_id;
             }
         }
-        console.log('closest location to ' + location + ':' + closestLocation);
-        console.log('Distance: ' + closestDistance);
+        // console.log('closest location to ' + location + ':' + closestLocation);
+        // console.log('Distance: ' + closestDistance);
         return closestLocation;
     },
 
