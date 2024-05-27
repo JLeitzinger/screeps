@@ -51,7 +51,7 @@ var funcSources = {
 
             var temp_id = sources[i].id
 
-            distance = location.pos.getRangeTo(sources[i]);
+            distance = location.pos.findPathTo(sources[i]).length;
 
 
             if (closestDistance > distance) {
