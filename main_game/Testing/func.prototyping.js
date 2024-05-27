@@ -25,7 +25,7 @@ var funcPrototyping = {
         var role = this.memory.role;
   
         roles[role].run(this);
-      },
+      }
     }
     // >
   
