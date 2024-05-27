@@ -2,6 +2,7 @@ var funcSources = {
     constructRoads: function(spawn, source) {
         var path = spawn.pos.findPathTo(source, {ignoreCreeps: true});
         for (i=0; i<path.length; i++) {
+            console.log(path[i]);
             path[i].createConstructionSite(STRUCTURE_ROAD);
         };
     },
