@@ -65,7 +65,7 @@ module.exports.loop = function () {
             return structure.structureType == STRUCTURE_TOWER;
         }
     });
-    for(var tower in towers){
+    for(var tower of towers){
         console.log('Tower: ' + tower);
         roleTower.run(tower);
     }
