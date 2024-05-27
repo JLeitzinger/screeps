@@ -9,10 +9,9 @@ var roleGatherer = {
                     creep.moveTo(drops[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
-            return
         }
 
-        else {
+        if(creep.store.getFreeCapacity() == 0) {
             funcCreeps.depositStores(creep);
         }
     }
