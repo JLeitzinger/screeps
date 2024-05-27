@@ -16,7 +16,7 @@ var funcSources = {
         for (i=0; i<path.length; i++) {
             step = path[i]
 
-            if (!self.somethingThere(spawn, step)) {
+            if (!this.somethingThere(spawn, step)) {
                 spawn.room.createConstructionSite(step.x, step.y, STRUCTURE_ROAD);
             }
             
