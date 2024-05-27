@@ -54,6 +54,7 @@ var funcSources = {
                 closestLocation = sources[i];
             }
         }
+        console.log(closestLocation);
         return closestLocation;
     },
 
