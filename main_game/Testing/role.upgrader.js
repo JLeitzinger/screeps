@@ -21,7 +21,7 @@ var roleUpgrader = {
             }
         }
         else{
-            console.log('upgrader should be harvesting')
+            // console.log('upgrader should be harvesting')
             funcCreeps.harvest(creep);
         }
 
