@@ -67,13 +67,15 @@ var funcSources = {
         spawn = _.values(Game.spawns)[0];
         room = spawn.room;
 
-        var totalEnergy = spawn.energy;
+        var totalEnergy = 0;
 
-        let extensions = room.find(FIND_MY_STRUCTURES, {
-            filter: {structureType: STRUCTURE_EXTENSION}
+        let sources = room.find(FIND_MY_STRUCTURES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_EXTENSION ||
+                        structure.structureType == STRUCTURE_SPAWN)}
         });
 
-        for(let extention of extensions) {
+        for(let source of sources) {
             totalEnergy += extensions.energy;
         }
 
