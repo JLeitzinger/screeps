@@ -4,7 +4,7 @@ funcSources = require("func.sources");
 var funcCreeps = {
     harvest: function(creep) {
         var source = Game.getObjectById(creep.memory.resource);
-        console.log(creep + ' harvesting ' + source);
+        // console.log(creep + ' harvesting ' + source);
         if(creep.harvest(source) == ERR_NOT_IN_RANGE) {
             creep.moveTo(source, {visualizePathStyle: {stroke: '#ffaa00'}});
         }
