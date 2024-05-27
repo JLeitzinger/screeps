@@ -43,7 +43,8 @@ var funcSources = {
         spawn = _.values(Game.spawns)[0];
         room = spawn.room;
 
-        const sources = spawn.room.find(FIND_SOURCES);
+        var sources = spawn.room.find(FIND_SOURCES);
+        console.log(sources[0]);
 
         var closestDistance = 0;
 
