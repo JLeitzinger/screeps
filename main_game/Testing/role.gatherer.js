@@ -9,6 +9,7 @@ var roleGatherer = {
                     creep.moveTo(drops[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
+            return
         }
 
         else {
