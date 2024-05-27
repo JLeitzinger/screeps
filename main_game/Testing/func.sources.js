@@ -44,14 +44,14 @@ var funcSources = {
         room = spawn.room;
 
         const sources = spawn.room.find(FIND_SOURCES);
-        var closestLocation;
+
         var closestDistance = 0;
 
         for(i=0; i < sources.length; i++) {
             distance = location.pos.getRangeTo(sources[i]);
             if (closestDistance > distance) {
                 closestDistance = distance;
-                closestLocation = sources[i];
+                var closestLocation = sources[i];
             }
         }
         console.log(closestLocation);
