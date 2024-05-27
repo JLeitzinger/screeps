@@ -10,7 +10,8 @@ var roleHarvester = {
             funcCreeps.harvest(creep);
             }
 
-        if(funcStructures.countCreeps('gatherer') > 0) {
+        if(funcStructures.countCreeps('gatherer') > 0 &&
+            creep.store.getFreeCapacity() == 0) {
             creep.say("Dropping This!");
             creep.drop(RESOURCE_ENERGY);
         }
