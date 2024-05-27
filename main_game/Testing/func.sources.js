@@ -2,7 +2,6 @@ var funcSources = {
     constructRoads: function(spawn, source) {
         var path = spawn.pos.findPathTo(source, {ignoreCreeps: true});
         for (i=0; i<path.length; i++) {
-            console.log(path[i]);
             step = path[i]
             spawn.room.createConstructionSite(step.x, step.y, STRUCTURE_ROAD);
         };
@@ -27,6 +26,7 @@ var funcSources = {
 
             if(!room.memory.roadBuilt[sources[i].id]) {
                 this.constructRoads(spawn, sources[i]);
+                room.memory.roadBuilt = true;
             }
         }
     },
