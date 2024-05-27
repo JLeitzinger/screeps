@@ -7,18 +7,23 @@ var funcSources = {
     },
     buildRoads: function() {
         spawn = _.values(Game.spawns)[0];
-    
+        room = spawn.room;
+
         if (!spawn) {
             console.log("No Spawn Found");
             return;
         }
 
+        if (!room.memory.roadBuilt) {
+            room.memory.roadBuilt = {}
+        }
+
         // Get all sources in room
         sources = spawn.room.find(FIND_SOURCES);
         for(i=0; i < sources.length; i++) {
-            sources[i].memory.roadBuilt = sources[i].memory.roadBuilt || false;
 
-            if(!sources[i].memory.roadBuilt) {
+
+            if(!room.memory.roadBuilt[source[i].id]) {
                 this.constructRoads(spawn, sources[i]);
             }
         }
