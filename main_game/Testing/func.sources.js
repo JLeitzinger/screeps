@@ -23,7 +23,7 @@ var funcSources = {
         for(i=0; i < sources.length; i++) {
 
 
-            if(!room.memory.roadBuilt[source[i].id]) {
+            if(!room.memory.roadBuilt[sources[i].id]) {
                 this.constructRoads(spawn, sources[i]);
             }
         }
