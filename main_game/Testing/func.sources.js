@@ -13,7 +13,7 @@ var funcSources = {
 
     constructRoads: function(spawn, source) {
         var path = spawn.pos.findPathTo(source, {ignoreCreeps: true});
-        for (i=0; i<path.length; i++) {
+        for (i=0; i<path.length-1; i++) {
             step = path[i]
 
             if (!this.somethingThere(spawn, step)) {
@@ -47,7 +47,7 @@ var funcSources = {
 
         var closestDistance = 10000;
 
-        for(i=0; i < sources.length-1; i++) {
+        for(i=0; i < sources.length; i++) {
 
             var temp_id = sources[i].id
 
