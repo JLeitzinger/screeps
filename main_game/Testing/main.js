@@ -66,7 +66,7 @@ module.exports.loop = function () {
         }
     });
     for(var tower in towers){
-        console.log('Tower: ' + towers);
+        console.log('Tower: ' + tower);
         roleTower.run(tower);
     }
 
