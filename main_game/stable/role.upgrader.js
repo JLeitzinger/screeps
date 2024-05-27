@@ -32,6 +32,7 @@ var roleUpgrader = {
         }
 
         else {
+            console.log('upgrader capacity: ' + creep.store.getFreeCapacity());
             funcCreeps.depositStores(creep);
         }
 	}
