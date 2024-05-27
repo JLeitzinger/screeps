@@ -10,6 +10,8 @@ var assignSource = require('./action.assignSource');
 
 var funcPrototyping = require("./func.prototyping");
 var funcSources = require("./func.sources");
+var roleTower = require("./role.tower.js")
+
 
 const base_name = 'spawn1';
 var totalCreeps = new Map();
@@ -55,6 +57,15 @@ module.exports.loop = function () {
 
     // checkSources.run();
     var number_creep = 0;
+    const spawn = _.values(Game.spawns)[0];
+    const room = spawn.room;
+    const towers = room.find(FIND_STRUCTURES, {
+        filter: (structure) => {return structure.structureType == STRUCTURE_TOWER}
+    });
+    for(var tower in towers){
+        roleTower(tower);
+    }
+
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
