@@ -5,7 +5,7 @@ var roleTower = {
         console.log("This is tower in fn: " + tower);
         const enemies = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         
-        if (enemies.length) {
+        if (enemies.length>0) {
             tower.attack(enemies[0]);
         }
     }
