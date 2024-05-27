@@ -9,6 +9,7 @@ var roleGatherer = {
             });
             if (harvesters > 1) {
                 creep.moveTo(harvesters[0])
+                console.log(creep + ' moving to ' + harvesters[0]);
             }
             if (drops.length > 1) {
                 if(creep.pickup(drops[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
