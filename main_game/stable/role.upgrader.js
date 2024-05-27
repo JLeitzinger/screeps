@@ -19,12 +19,6 @@ var roleUpgrader = {
             if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
             }
-            else {
-                var controller_x = creep.room.controller.pos.x;
-                var controller_y = creep.room.controller.pos.y;
-
-                creep.moveTo(controller_x - 1, controller_y);
-            }
         }
         else{
             console.log('upgrader should be harvesting')

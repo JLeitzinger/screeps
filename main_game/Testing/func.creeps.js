@@ -4,6 +4,7 @@ funcSources = require("func.sources");
 var funcCreeps = {
     harvest: function(creep) {
         var source = Game.getObjectById(creep.memory.resource);
+        console.log(creep + ' ' + creep.memory.role);
         if(creep.memory.role=='upgrader') {
             console.log(creep + ' harvesting ' + source);
             console.log('Should be ' + creep.memory.resource)
