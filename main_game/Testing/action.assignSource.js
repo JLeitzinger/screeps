@@ -19,7 +19,7 @@ var assignSource = {
         else {
             var spawn = _.values(Game.spawns)[0];
             location = funcSources.findClosest(spawn);
-            console.log(creep.id + ' assigned: ' + location.id);
+            console.log(creep.id + ' assigned: ' + location);
             creep.memory.resource = location;
             return;
 
