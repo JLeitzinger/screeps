@@ -50,8 +50,10 @@ var funcSources = {
         for(i=0; i < sources.length; i++) {
             console.log('source is:' + sources[i]);
             var temp_id = sources[i].id
-            
+
             distance = location.pos.getRangeTo(sources[i]);
+            console.log('Check:' + (closestDistance > distance));
+
             if (closestDistance > distance) {
                 closestDistance = distance;
                 console.log('temp_id:' + temp_id);
