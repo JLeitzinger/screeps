@@ -8,11 +8,11 @@ var roleGatherer = {
                 filter: (creep) => creep.memory.role == 'harvester'
             });
             console.log(harvesters);
-            if (harvesters > 1) {
+            if (harvesters > 0 {
                 creep.moveTo(harvesters[0])
                 console.log(creep + ' moving to ' + harvesters[0]);
             }
-            if (drops.length > 1) {
+            if (drops.length > 0) {
                 if(creep.pickup(drops[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(drops[0], {visualizePathStyle: {stroke: '#ffffff'}});
                     console.log(creep + ' moving to ' + drops[0])
