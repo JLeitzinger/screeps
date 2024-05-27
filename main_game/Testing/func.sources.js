@@ -76,7 +76,7 @@ var funcSources = {
         });
 
         for(let source of sources) {
-            totalEnergy += extensions.energy;
+            totalEnergy += source.energy;
         }
 
         return totalEnergy
