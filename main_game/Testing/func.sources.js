@@ -69,7 +69,7 @@ var funcSources = {
 
         var totalEnergy = spawn.energy;
 
-        let extensions = room.find(FIDN_MY_STRUCTURES, {
+        let extensions = room.find(FIND_MY_STRUCTURES, {
             filter: {structureType: STRUCTURE_EXTENSION}
         });
 
