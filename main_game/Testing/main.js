@@ -57,8 +57,8 @@ module.exports.loop = function () {
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        spotsInLine = checkSources.run(creep, spotsInLine);
-        assignSource.run(creep, spotsInLine);
+        // spotsInLine = checkSources.run(creep);
+        assignSource.run(creep);
         creep.run();
     }
 }

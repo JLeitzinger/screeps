@@ -6,7 +6,7 @@ var assignSource = {
         if a source has remaining spots, assign creep to it
         decrement number of spots
     */
-    run: function(creep, spotsInLine) {
+    run: function(creep) {
         var sources = creep.room.find(FIND_SOURCES);
 
         if(creep.memory.role == 'upgrader') {
