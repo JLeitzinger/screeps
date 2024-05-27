@@ -10,8 +10,7 @@ var roleUpgrader = {
             creep.say('🔄 harvest');
 	    }
 	    if(!creep.memory.upgrading &&
-            creep.store.getFreeCapacity() == 0 &&
-            Game.spawns['spawn1'].store.getFreeCapacity(RESOURCE_ENERGY)<100) {
+            creep.store.getFreeCapacity() == 0) {
 	        creep.memory.upgrading = true;
 	        creep.say('⚡ upgrade');
 	    }
