@@ -16,8 +16,9 @@ var funcSources = {
         // Get all sources in room
         sources = spawn.room.find(FIND_SOURCES);
         for(i=0; i < sources.length; i++) {
+            sources[i].memory.roadBuilt = sources[i].memory.roadBuilt || false;
 
-            if(!(sources[i].memory.roadBuilt || false)) {
+            if(!sources[i].memory.roadBuilt) {
                 this.constructRoads(spawn, sources[i]);
             }
         }
