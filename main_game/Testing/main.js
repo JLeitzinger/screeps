@@ -63,7 +63,7 @@ module.exports.loop = function () {
         filter: (structure) => {return structure.structureType == STRUCTURE_TOWER}
     });
     for(var tower in towers){
-        roleTower(tower);
+        roleTower.run(tower);
     }
 
 
