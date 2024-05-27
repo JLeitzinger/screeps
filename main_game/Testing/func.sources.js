@@ -47,7 +47,7 @@ var funcSources = {
 
         var closestDistance = 10000;
 
-        for(i=0; i < sources.length; i++) {
+        for(i=0; i < sources.length-1; i++) {
 
             var temp_id = sources[i].id
 
