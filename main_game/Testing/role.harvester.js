@@ -11,6 +11,7 @@ var roleHarvester = {
             }
 
         if(funcStructures.countCreeps('gatherer') > 0) {
+            creep.say("Dropping This!");
             creep.drop(RESOURCE_ENERGY);
         }
 
