@@ -3,7 +3,7 @@ let buildHash = new Map();
 
 buildHash.set('builder', [WORK, CARRY, MOVE]);
 buildHash.set('upgrader', [WORK, WORK, CARRY, MOVE]);
-buildHash.set('harvester', [WORK, CARRY, MOVE]);
+buildHash.set('harvester', [WORK,WORK,CARRY, CARRY, MOVE]);
 
 function fillCreeps(totalCreeps, spawn) {
     for(const [role, value] of totalCreeps) {
