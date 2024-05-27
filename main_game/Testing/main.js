@@ -59,14 +59,14 @@ module.exports.loop = function () {
     var number_creep = 0;
     const spawn = _.values(Game.spawns)[0];
     const room = spawn.room;
-    console.log(spawn + ': ' + room);
+    // console.log(spawn + ': ' + room);
     let towers = room.find(FIND_STRUCTURES, {
         filter: (structure) => {
             return structure.structureType == STRUCTURE_TOWER;
         }
     });
     for(var tower of towers){
-        console.log('Tower: ' + tower);
+        // console.log('Tower: ' + tower);
         roleTower.run(tower);
     }
 
