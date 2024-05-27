@@ -44,7 +44,6 @@ var funcSources = {
         room = spawn.room;
 
         var sources = spawn.room.find(FIND_SOURCES);
-        console.log(sources[0]);
 
         var closestDistance = 0;
 
@@ -53,7 +52,8 @@ var funcSources = {
             console.log(distance);
             if (closestDistance > distance) {
                 closestDistance = distance;
-                var closestLocation = sources[i];
+                console.log(sources[i])
+                var closestLocation = sources[i].id;
             }
         }
         console.log(closestLocation);
