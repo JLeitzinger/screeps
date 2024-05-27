@@ -13,9 +13,9 @@ var assignSource = {
             var cont_loc = creep.room.controller;
             location = funcSources.findClosest(cont_loc);
             // console.log(creep.id + ' assigned: ' + location);
-            console.log('Upgrader Resource should be ' + location);
+            // console.log('Upgrader Resource should be ' + location);
             creep.memory.resource = location
-            console.log('upgrader ' + creep.memory.resource);
+            // console.log('upgrader ' + creep.memory.resource);
             return;
             //test
         }

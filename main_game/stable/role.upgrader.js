@@ -27,6 +27,7 @@ var roleUpgrader = {
             }
         }
         if(creep.store.getFreeCapacity() > 0 && !creep.memory.upgrading) {
+            console.log('upgrader should be harvesting')
             funcCreeps.harvest(creep);
         }
 
