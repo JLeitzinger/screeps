@@ -4,6 +4,7 @@ var roles = {
     "harvester": require("role.harvester"),
     "upgrader": require("role.upgrader"),
     "builder": require("role.builder"),
+    "gatherer": require("role.gatherer"),
 }
 
 // </Variables>
@@ -24,7 +25,7 @@ var funcPrototyping = {
         var role = this.memory.role;
   
         roles[role].run(this);
-      }
+      },
     }
     // >
   
