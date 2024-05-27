@@ -60,11 +60,13 @@ module.exports.loop = function () {
     const spawn = _.values(Game.spawns)[0];
     const room = spawn.room;
     console.log(spawn + ': ' + room);
-    const towers = room.find(FIND_STRUCTURES, {
-        filter: (structure) => {return structure.structureType == STRUCTURE_TOWER}
+    let towers = room.find(FIND_STRUCTURES, {
+        filter: (structure) => {
+            return structure.structureType == STRUCTURE_TOWER;
+        }
     });
     for(var tower in towers){
-        console.log('Tower: ' + tower);
+        console.log('Tower: ' + towers);
         roleTower.run(tower);
     }
 
