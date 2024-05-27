@@ -39,6 +39,13 @@ var funcCreeps = {
             }
         }
     },
+    repairRoads: function(creep) {
+        var targets = creep.room.find(FIND_STRUCTURES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_ROAD)
+            }
+        });
+    },
 };
 
 
