@@ -7,7 +7,7 @@ var funcSources = {
     },
     buildRoads: function() {
         spawn = _.values(Game.spawns)[0];
-
+    
         if (!spawn) {
             console.log("No Spawn Found");
             return;
@@ -16,7 +16,8 @@ var funcSources = {
         // Get all sources in room
         sources = spawn.room.find(FIND_SOURCES);
         for(i=0; i < sources.length; i++) {
-            if(!sources[i].memory.roadBuilt) {
+
+            if(!(sources[i].memory.roadBuilt || false) {
                 this.constructRoads(spawn, sources[i]);
             }
         }
