@@ -45,7 +45,7 @@ var funcSources = {
 
         var sources = spawn.room.find(FIND_SOURCES);
 
-        var closestDistance = 0;
+        var closestDistance = 10000;
 
         for(i=0; i < sources.length; i++) {
             console.log('source is:' + sources[i]);
