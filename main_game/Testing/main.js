@@ -9,6 +9,7 @@ var assignSource = require('./action.assignSource');
 
 
 var funcPrototyping = require("./func.prototyping");
+var funcSources = require("./func.sources");
 
 const base_name = 'spawn1';
 var totalCreeps = new Map();
@@ -37,6 +38,9 @@ module.exports.loop = function () {
 
     //Autospawn
     autoSpawn.run(totalCreeps, base_name);
+
+    //Build Roads
+    funcSources.buildRoads();
 
     //Notification
     if(Game.spawns[base_name].spawning) {
