@@ -1,4 +1,3 @@
-
 funcStructures = require('./func.structures');
 
 let buildHash = new Map();
@@ -9,19 +8,23 @@ buildHash.set('harvester', [WORK,WORK, CARRY, MOVE]);
 buildHash.set('gatherer', [CARRY,CARRY,MOVE,MOVE]);
 
 function fillCreeps(totalCreeps, spawn) {
-    for(const [role, value] of totalCreeps) {
+    const priorityRoles = ['harvester', 'gatherer'];
+    const otherRoles = Array.from(totalCreeps.keys()).filter(role => !priorityRoles.includes(role));
+    const roles = [...priorityRoles, ...otherRoles];
+
+    for(const role of roles) {
+        const value = totalCreeps.get(role);
         var num_of_creeps = _.filter(
             Game.creeps,
             (creep) => creep.memory.role == role
         );
-        // console.log(role + ': ' + num_of_creeps.length);
-        // console.log(role + ' ' + value);
         if (num_of_creeps.length < value) {
             var newName = role + Game.time;
             console.log('Spawning new ' + role + ': ' + newName);
             Game.spawns[spawn].spawnCreep(buildHash.get(role), newName,
                 {memory: {role: role}}
             );
+            break; // Ensure only one creep is spawned per tick
         }
     }
 }
