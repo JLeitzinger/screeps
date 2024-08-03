@@ -1,5 +1,5 @@
-var funcCreeps = require("./func/creeps");
-var funcStructures = require("./func/structures");
+var funcCreeps = require('./func/creeps');
+var funcStructures = require('./func/structures');
 
 var roleHarvester = {
 

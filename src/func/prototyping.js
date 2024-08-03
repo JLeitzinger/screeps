@@ -1,16 +1,16 @@
 // <Variables>
 
 var roles = {
-    "harvester": require("role.harvester"),
-    "upgrader": require("role.upgrader"),
-    "builder": require("role.builder"),
-    "gatherer": require("role.gatherer"),
+    "harvester": require('./role/harvester'),
+    "upgrader": require('./role/upgrader'),
+    "builder": require('./role/builder'),
+    "gatherer": require('./role/gatherer'),
 }
 
 // </Variables>
 
 // <Functions>
-var funcCreeps = require("func.creeps");
+var funcCreeps = require('./func/creeps');
 
 // </Functions>
 

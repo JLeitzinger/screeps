@@ -1,4 +1,4 @@
-var funcStructures = require('func/structures');
+var funcStructures = require('./func/structures');
 
 var roleTower = {
     run: function(tower) {

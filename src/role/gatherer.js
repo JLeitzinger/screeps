@@ -1,4 +1,4 @@
-var funcCreeps = require("./func/creeps");
+var funcCreeps = require('./func/creeps');
 
 var roleGatherer = {
     run: function(creep) {

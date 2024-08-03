@@ -1,4 +1,4 @@
-funcSources = require("./func/sources");
+funcSources = require('./func/sources');
 
 
 var funcCreeps = {

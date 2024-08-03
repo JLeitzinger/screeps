@@ -3,14 +3,14 @@ var roleUpgrader = require('./role/upgrader');
 var roleBuilder = require('./role/builder');
 var buildRoads = require('./action/buildRoads');
 
-var autoSpawn = require('./action/autospawn');
-var checkSources = require('./check/sources');
+var autoSpawn = require('./action/autoSpawn');
+var checkSources = require('./checks/sources');
 var assignSource = require('./action/assignSource');
 
 
-var funcPrototyping = require("./func/prototyping");
-var funcSources = require("./func/sources");
-var roleTower = require("./role/tower")
+var funcPrototyping = require('./func/prototyping');
+var funcSources = require('./func/sources');
+var roleTower = require('./role/tower');
 
 
 const base_name = 'spawn1';
