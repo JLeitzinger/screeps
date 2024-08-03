@@ -1,4 +1,4 @@
-funcStructures = require('./func.structures');
+funcStructures = require('./func/structures');
 
 let buildHash = new Map();
 

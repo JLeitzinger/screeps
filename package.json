@@ -1,24 +1,19 @@
 {
-  "dependencies": {
-    "@types/lodash": "^4.17.1",
-    "@types/screeps": "^3.3.8"
-  },
   "name": "screeps",
-  "description": "How to get autocomplete: - Just run npm install @types/screeps npm install @types/lodash",
   "version": "1.0.0",
-  "main": "test_main.js",
-  "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-babel": "^8.0.0",
-    "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-screeps": "^1.5.0"
-  },
+  "description": "How to get autocomplete: - Just run npm install @types/screeps npm install @types/lodash",
+  "main": "Grunfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-cli": "^1.5.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-screeps": "^1.5.0",
+    "liftup": "^3.0.1"
+  }
 }
