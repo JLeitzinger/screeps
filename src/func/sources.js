@@ -37,6 +37,41 @@ var funcSources = {
         for(i=0; i < sources.length; i++) {
             this.constructRoads(spawn, sources[i]);
         }
+        // Lazy way to find room controllers
+
+        this.constructRoads(spawn, spawn.room.controller)
+
+        sources = spawn.room.find();
+        for(i=0; i < sources.length; i++) {
+            this.constructRoads(spawn, sources[i]);
+        }
+    },
+
+    getRCLevel: function() {
+        spawn = _.values(Game.spawns)[0];
+        room = spawn.room;
+        return room.controller.level
+    },
+
+    buildExpanders: function() {
+
+        let rc_level = this.getRCLevel()
+
+        // Map of Room Controller Level to # of expansions
+        var rc_expansions = {
+            0:0,
+            1:0,
+            2:5,
+            3:10,
+            4:20,
+            5:30,
+            6:40,
+            7:50,
+            8:60,
+        };
+
+
+
     },
 
     findClosest: function(location) {
