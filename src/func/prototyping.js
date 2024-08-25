@@ -25,6 +25,25 @@ var funcPrototyping = {
         var role = this.memory.role;
   
         roles[role].run(this);
+      },
+      Creep.prototype.assignSource = function(){
+        var room = this.room;
+        var resourceID = '';
+        var maxEnergy = 0;
+        sources = room.find(FIND_SOURCES);
+
+        sources.forEach(source => {
+          if (source.energy > maxEnergy) {
+            maxEnergy = source.energy;
+            resourceID = source.id;
+          }
+
+        })
+
+        this.memory.resource = resourceID;
+
+
+
       }
     }
     // >

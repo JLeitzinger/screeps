@@ -5,6 +5,10 @@ var roleHarvester = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
+        if (!creep.memory.resource) {
+            creep.assignSource();
+        }
+
 	    if(creep.store.getFreeCapacity() > 0) {
             creep.memory.harvesting = true;
             funcCreeps.harvest(creep);

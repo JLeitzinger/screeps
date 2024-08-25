@@ -11,14 +11,15 @@ const STRUCTURE_MAP = {
 // Now basePlans is a JavaScript object containing your base plans
 
 var basePlanning = {
+    isConstructionSite: function(room, x, y) {
+        constructionSites = room.find(FIND_CONSTRUCTION_SITES);
+        return constructionSites.some(site => site.pos.x === x & site.pos.y === y);
+    },
     run: function(roomName) {
         const room = Game.rooms[roomName];
-        // console.log(room);
         const spawn = room.find(FIND_MY_SPAWNS)[0];
-        // console.log(spawn);
-        // const spawn_x = spawn.pos.x;
-        // const spawn_y = spawn.pos.y;
         const buildings = Memory.basePlans['buildings'];
+
         structures = Object.keys(buildings);
         structures = structures.filter(item => item !== "spawn")
 
@@ -28,8 +29,6 @@ var basePlanning = {
 
         structures.forEach(structure => {
             var structBuild = STRUCTURE_MAP[structure]
-            // console.log('printing structBuild');
-            console.log(structBuild);
             var currentLocations = Object.values(buildings[structure])
 
             for (let i=0; i < currentLocations.length; i++) {
@@ -37,26 +36,31 @@ var basePlanning = {
                 let x = currentLocations[i]['x'];
                 let y = currentLocations[i]['y'];
 
-                // console.log(x);
-                // console.log(spawn.pos.x);
-                console.log(spawnFixedLocX);
                 var rel_x = x + spawnFixedLocX;
                 var rel_y = y + spawnFixedLocY;
-                console.log(rel_x);
-                console.log(rel_y);
-                console.log(structure);
-                if (structure==='extension') {
-                    console.log(`CS: extension ${rel_x} ${rel_y}`)
-                    room.createConstructionSite(rel_x, rel_y, STRUCTURE_EXTENSION);
-                }
+                if (!this.isConstructionSite(room, rel_x, rel_y)) {
+                    if (structure==='extension') {
+                        // console.log(`CS: extension ${rel_x} ${rel_y}`)
+                        room.createConstructionSite(rel_x, rel_y, STRUCTURE_EXTENSION);
+                    }
+    
+                    else if (structure==='road') {
+                        // console.log(`Road: extension ${rel_x} ${rel_y}`)
+                        room.createConstructionSite(rel_x, rel_y, STRUCTURE_ROAD);
+                    }
+    
+                    else if (structure==='tower') {
+                        // console.log(`Tower: extension ${rel_x} ${rel_y}`)
+                        room.createConstructionSite(rel_x, rel_y, STRUCTURE_TOWER);
+                    }
 
-                else if (structure==='road') {
-                    room.createConstructionSite(rel_x, rel_y, STRUCTURE_ROAD);
+                    else if (structure==='container') {
+                        // console.log(`CS: container ${rel_x} ${rel_y}`)
+                        room.createConstructionSite(rel_x, rel_y, STRUCTURE_CONTAINER);
+                    }
                 }
+                else {continue};
 
-                else if (structure==='tower') {
-                    room.createConstructionSite(rel_x, rel_y, STRUCTURE_TOWER);
-                }
             }
         })
     }

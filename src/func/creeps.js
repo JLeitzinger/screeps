@@ -45,6 +45,9 @@ var funcCreeps = {
             }
         });
     },
+    assignResource: function() {
+        
+    },
 };
 
 

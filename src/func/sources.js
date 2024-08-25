@@ -13,13 +13,13 @@ var funcSources = {
 
     constructRoads: function(spawn, source) {
         var path = spawn.pos.findPathTo(source, {ignoreCreeps: true});
-        for (i=0; i<path.length-1; i++) {
-            step = path[i]
+        console.log(`Building Road to ${source}`)
+        for (j=0; j<path.length-1; j++) {
+            step = path[j]
 
             if (!this.somethingThere(spawn, step)) {
                 spawn.room.createConstructionSite(step.x, step.y, STRUCTURE_ROAD);
             }
-            
         };
     },
 
@@ -35,16 +35,17 @@ var funcSources = {
         // Get all sources in room
         sources = spawn.room.find(FIND_SOURCES);
         for(i=0; i < sources.length; i++) {
+            console.log(i);
             this.constructRoads(spawn, sources[i]);
         }
         // Lazy way to find room controllers
 
-        this.constructRoads(spawn, spawn.room.controller)
+        // this.constructRoads(spawn, spawn.room.controller)
 
-        sources = spawn.room.find();
-        for(i=0; i < sources.length; i++) {
-            this.constructRoads(spawn, sources[i]);
-        }
+        // sources = spawn.room.find();
+        // for(i=0; i < sources.length; i++) {
+        //     this.constructRoads(spawn, sources[i]);
+        // }
     },
 
     getRCLevel: function() {
@@ -97,7 +98,6 @@ var funcSources = {
         // console.log('Distance: ' + closestDistance);
         return closestLocation;
     },
-
     getTotalEnergy: function() {
         spawn = _.values(Game.spawns)[0];
         room = spawn.room;
