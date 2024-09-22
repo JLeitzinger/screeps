@@ -13,7 +13,7 @@ var funcSources = {
 
     constructRoads: function(spawn, source) {
         var path = spawn.pos.findPathTo(source, {ignoreCreeps: true});
-        console.log(`Building Road to ${source}`)
+        // console.log(`Building Road to ${source}`)
         for (j=0; j<path.length-1; j++) {
             step = path[j]
 
@@ -35,7 +35,7 @@ var funcSources = {
         // Get all sources in room
         sources = spawn.room.find(FIND_SOURCES);
         for(i=0; i < sources.length; i++) {
-            console.log(i);
+            // console.log(i);
             this.constructRoads(spawn, sources[i]);
         }
         // Lazy way to find room controllers

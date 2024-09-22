@@ -22,7 +22,8 @@ var roleUpgrader = {
         }
         else{
             // console.log('upgrader should be harvesting')
-            funcCreeps.harvest(creep);
+            // funcCreeps.harvest(creep);
+            funcCreeps.withdrawStores(creep);
         }
 
         // else {

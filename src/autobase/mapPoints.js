@@ -15,6 +15,15 @@ var basePlanning = {
         constructionSites = room.find(FIND_CONSTRUCTION_SITES);
         return constructionSites.some(site => site.pos.x === x & site.pos.y === y);
     },
+    isBlocked: function(room, x, y) {
+        const terrain = room.getTerrain().get(x, y);
+        // terrain = 0;
+        return terrain === 1
+    },
+    somethingThere: function(room, x, y) {
+        const thingsInSpot = room.lookAt(x, y);
+        return thingsInSpot.length > 1;
+    },
     run: function(roomName) {
         const room = Game.rooms[roomName];
         const spawn = room.find(FIND_MY_SPAWNS)[0];
@@ -38,7 +47,7 @@ var basePlanning = {
 
                 var rel_x = x + spawnFixedLocX;
                 var rel_y = y + spawnFixedLocY;
-                if (!this.isConstructionSite(room, rel_x, rel_y)) {
+                if (!this.isConstructionSite(room, rel_x, rel_y) && !this.isBlocked(room, rel_x, rel_y) && !this.somethingThere(room, rel_x, rel_y)) {
                     if (structure==='extension') {
                         // console.log(`CS: extension ${rel_x} ${rel_y}`)
                         room.createConstructionSite(rel_x, rel_y, STRUCTURE_EXTENSION);

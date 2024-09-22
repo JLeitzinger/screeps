@@ -5,7 +5,8 @@ var roleHarvester = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-        if (!creep.memory.resource) {
+        const currentSource = Game.getObjectById(creep.memory.resource);
+        if (!creep.memory.resource || currentSource.energy < 500) {
             creep.assignSource();
         }
 

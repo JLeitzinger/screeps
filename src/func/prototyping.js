@@ -5,6 +5,7 @@ var roles = {
     "upgrader": require('./role/upgrader'),
     "builder": require('./role/builder'),
     "gatherer": require('./role/gatherer'),
+    "zerg": require('./role/zerg')
 }
 
 // </Variables>
