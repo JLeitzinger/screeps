@@ -6,22 +6,31 @@ var roleTower = {
         const enemy = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         const damagedStructures = tower.room.find(FIND_STRUCTURES,{
             filter: (structure) => {
-                return (structure.hits / structure.hitsMax < 0.5) || (structure.hits < 1000);
+                return (structure.hits / structure.hitsMax < 0.5 && structure.hits < 1000) || (structure.hits < 1000 && structure.hits > 0);
             }
         });
 
         if (enemy != undefined) {
+            console.log('attacking enemy');
+            console.log(enemy);
             tower.attack(enemy);
         }
 
-        if (damagedStructures.length > 0) {
+        else if (damagedStructures.length > 0) {
             damagedStructures.sort((a, b) => a.hits - b.hits);
             const target = damagedStructures[0];
+            // console.log(target);
+            
 
             if(tower.store[RESOURCE_ENERGY] >= REPAIR_COST) {
-                tower.repair(target);
+                result = tower.repair(target);
+                if (result === OK) {
+                    console.log('repairing');
+                }
             }
         }
+
+
     }
 }; 
 

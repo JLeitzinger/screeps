@@ -26,6 +26,11 @@ var funcCreeps = {
             }
         }
     },
+    dismantleRuins: function(creep, ruin) {
+        if(creep.dismantle(ruin) == ERR_NOT_IN_RANGE) {
+            creep.moveTo(ruin, {visualizePathStyle: {stroke: '#ffffff'}});
+        }
+    },
     withdrawStores: function(creep) {
         var targets = creep.room.find(FIND_STRUCTURES, {
             filter: (structure) => {

@@ -2,6 +2,13 @@ var funcCreeps = require('./func/creeps');
 
 var roleGatherer = {
     run: function(creep) {
+
+        ruins = creep.room.find(FIND_RUINS);
+
+        if (ruins.length > 0) {
+            funcCreeps.dismantleRuin(creep, ruins[0])
+        }
+
         if(creep.store.getFreeCapacity() != 0) {
             let drops = creep.room.find(FIND_DROPPED_RESOURCES);
             // console.log(drops);
